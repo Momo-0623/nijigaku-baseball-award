@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,498 +10,340 @@
 <style>
 
 :root{
---navy:#05284d;
---navy2:#001a35;
---red:#b71924;
---gold:#bd8b25;
---paper:#fffdf5;
---line:#d9dee6;
---bg:#eef1f5;
+ --navy:#05284d;
+ --navy2:#001a35;
+ --red:#b71924;
+ --gold:#bd8b25;
+ --paper:#fffdf5;
+ --line:#d9dee6;
+ --bg:#eef1f5;
 }
 
 *{
-box-sizing:border-box;
+ box-sizing:border-box;
 }
 
 body{
-margin:0;
-background:var(--bg);
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;
-color:#15202b;
+ margin:0;
+ background:var(--bg);
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;
+ color:#15202b;
 }
 
 header{
-background:var(--navy);
-color:#fff;
-padding:14px 20px;
-font-weight:800;
-font-size:20px;
+ background:var(--navy);
+ color:#fff;
+ padding:14px 20px;
+ font-weight:800;
+ font-size:20px;
 }
 
 main{
-max-width:1500px;
-margin:auto;
-padding:16px;
-display:grid;
-grid-template-columns:330px minmax(0,1fr);
-gap:16px;
+ max-width:1500px;
+ margin:auto;
+ padding:16px;
+ display:grid;
+ grid-template-columns:330px minmax(0,1fr);
+ gap:16px;
 }
 
 .panel{
-background:#fff;
-border:1px solid var(--line);
-border-radius:12px;
-padding:16px;
-box-shadow:0 2px 8px #0000000a;
+ background:#fff;
+ border:1px solid var(--line);
+ border-radius:12px;
+ padding:16px;
+ box-shadow:0 2px 8px #0000000a;
 }
 
 h2{
-margin-top:0;
+ margin-top:0;
 }
 
 label{
-display:block;
-font-weight:700;
-margin-top:10px;
+ display:block;
+ font-weight:700;
+ margin-top:10px;
 }
 
 select,
 input{
-width:100%;
-padding:11px;
-border:1px solid #cbd3dd;
-border-radius:8px;
-font:inherit;
-margin:6px 0;
+ width:100%;
+ padding:11px;
+ border:1px solid #cbd3dd;
+ border-radius:8px;
+ font:inherit;
+ margin:6px 0;
 }
 
 button{
-width:100%;
-border:0;
-border-radius:8px;
-padding:12px 16px;
-font-weight:800;
-cursor:pointer;
-margin-top:10px;
+ width:100%;
+ border:0;
+ border-radius:8px;
+ padding:12px 16px;
+ font-weight:800;
+ cursor:pointer;
+ margin-top:10px;
 }
 
 .primary{
-background:var(--red);
-color:#fff;
+ background:var(--red);
+ color:#fff;
 }
 
 .secondary{
-background:var(--navy);
-color:#fff;
+ background:var(--navy);
+ color:#fff;
 }
 
 .small{
-font-size:13px;
-color:#66717d;
-line-height:1.6;
+ font-size:13px;
+ color:#66717d;
+ line-height:1.6;
 }
 
 .preview-wrap{
-overflow:auto;
-display:grid;
-place-items:center;
+ overflow:auto;
+ display:grid;
+ place-items:center;
 }
-
 
 /* ==============================
    表彰状
-============================== */
+================================ */
 
 #certificate{
+ width:1120px;
+ height:792px;
+ position:relative;
+ overflow:hidden;
 
-width:1120px;
-height:792px;
+ background:var(--paper);
+ color:var(--navy2);
 
-position:relative;
-overflow:hidden;
+ border:18px solid var(--navy2);
 
-background:var(--paper);
-color:var(--navy2);
+ padding:20px 42px 30px;
 
-border:18px solid var(--navy2);
-
-padding:22px 42px 28px;
-
-font-family:
-"Yu Mincho",
-"Hiragino Mincho ProN",
-"Noto Serif JP",
-serif;
-
+ font-family:
+ "Yu Mincho",
+ "Hiragino Mincho ProN",
+ "Noto Serif JP",
+ serif;
 }
 
-
-/* 金二重枠 */
-
 #certificate:before{
-
-content:"";
-
-position:absolute;
-
-inset:11px;
-
-border:5px solid var(--gold);
-
-pointer-events:none;
-
+ content:"";
+ position:absolute;
+ inset:12px;
+ border:4px solid var(--gold);
+ pointer-events:none;
 }
 
 #certificate:after{
-
-content:"";
-
-position:absolute;
-
-inset:23px;
-
-border:1px solid var(--gold);
-
-pointer-events:none;
-
+ content:"";
+ position:absolute;
+ inset:22px;
+ border:1px solid var(--gold);
+ pointer-events:none;
 }
 
-
-/* 内側装飾枠 */
-
-.inner-frame{
-
-position:absolute;
-
-inset:34px;
-
-border:2px solid var(--navy);
-
-pointer-events:none;
-
-}
-
-.inner-frame:before,
-.inner-frame:after{
-
-content:"◆　✦　◆";
-
-position:absolute;
-
-left:50%;
-
-transform:translateX(-50%);
-
-color:var(--gold);
-
-font-size:17px;
-
-letter-spacing:.7em;
-
-background:var(--paper);
-
-padding-left:.7em;
-
-}
-
-.inner-frame:before{
-top:-12px;
-}
-
-.inner-frame:after{
-bottom:-12px;
-}
-
-
-/* 四隅装飾 */
+/* コーナー装飾 */
 
 .corner{
-
-position:absolute;
-
-width:180px;
-height:180px;
-
-background:var(--red);
-
-z-index:0;
-
+ position:absolute;
+ width:165px;
+ height:165px;
+ background:var(--red);
+ z-index:0;
 }
 
 .corner.tl{
-
-left:-92px;
-top:-92px;
-
-transform:rotate(45deg);
-
-border-right:8px solid var(--gold);
-
-}
-
-.corner.tr{
-
-right:-92px;
-top:-92px;
-
-transform:rotate(45deg);
-
-border-left:8px solid var(--gold);
-
-}
-
-.corner.bl{
-
-left:-92px;
-bottom:-92px;
-
-transform:rotate(45deg);
-
-border-right:8px solid var(--gold);
-
+ left:-80px;
+ top:-80px;
+ transform:rotate(45deg);
+ border-right:8px solid var(--gold);
 }
 
 .corner.br{
-
-right:-92px;
-bottom:-92px;
-
-transform:rotate(45deg);
-
-border-left:8px solid var(--gold);
-
+ right:-80px;
+ bottom:-80px;
+ transform:rotate(45deg);
+ border-left:8px solid var(--gold);
 }
 
+/* 内側装飾 */
 
-/* 左右装飾 */
-
-.side-laurel{
-
-position:absolute;
-
-top:185px;
-
-color:var(--gold);
-
-font-size:45px;
-
-line-height:1.15;
-
-opacity:.9;
-
-z-index:1;
-
+.ornament-top,
+.ornament-bottom{
+ position:absolute;
+ left:50%;
+ transform:translateX(-50%);
+ color:var(--gold);
+ letter-spacing:.4em;
+ z-index:1;
 }
 
-.side-laurel.left{
-left:54px;
+.ornament-top{
+ top:32px;
+ font-size:18px;
 }
 
-.side-laurel.right{
-
-right:54px;
-
-transform:scaleX(-1);
-
+.ornament-bottom{
+ bottom:28px;
+ font-size:17px;
 }
 
-
-/* 表彰状内容 */
+/* 内容 */
 
 .content{
+ position:relative;
+ z-index:1;
 
-position:relative;
+ height:100%;
 
-z-index:2;
-
-height:100%;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-text-align:center;
-
-/* 全体を上へ */
-
-transform:translateY(-18px);
-
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ text-align:center;
 }
 
+/* 王冠 */
 
 .crown{
-
-font-size:48px;
-
-color:var(--gold);
-
-line-height:1;
-
-margin-top:0;
-
+ font-size:54px;
+ color:var(--gold);
+ line-height:1;
+ margin-top:0;
 }
 
+/* 表彰状 */
 
 .title{
-
-font-size:64px;
-
-letter-spacing:.18em;
-
-margin:0 0 3px;
-
-font-weight:700;
-
+ font-size:65px;
+ letter-spacing:.18em;
+ margin:0 0 2px;
+ font-weight:700;
 }
 
+/* 金装飾 */
 
 .laurel{
-
-color:var(--gold);
-
-font-size:25px;
-
-letter-spacing:.2em;
-
-margin-bottom:2px;
-
+ color:var(--gold);
+ font-size:28px;
+ letter-spacing:.15em;
+ margin-bottom:3px;
 }
 
+/* 表彰項目 */
 
 .award{
-
-font-size:35px;
-
-letter-spacing:.18em;
-
-margin:0;
-
-color:#15202b;
-
+ font-size:36px;
+ letter-spacing:.18em;
+ margin:0;
+ color:#15202b;
 }
 
+/* 名前 */
 
 .recipient{
+ font-size:48px;
+ font-weight:700;
+ letter-spacing:.08em;
 
-font-size:47px;
+ margin:8px 0 5px;
 
-font-weight:700;
+ padding:0 55px 6px;
 
-letter-spacing:.08em;
-
-margin:10px 0 6px;
-
-padding:0 55px 6px;
-
-border-bottom:2px solid var(--gold);
-
+ border-bottom:2px solid var(--gold);
 }
 
+/* 本文 */
 
 .bodytext{
+ font-size:22px;
+ line-height:1.8;
+ letter-spacing:.06em;
 
-font-size:21px;
+ max-width:820px;
 
-line-height:1.8;
+ white-space:pre-line;
 
-letter-spacing:.06em;
-
-max-width:800px;
-
-white-space:pre-line;
-
-margin:4px auto;
-
+ margin:4px auto;
 }
 
+/* 大会名 */
 
 .tournament{
+ margin-top:auto;
 
-margin-top:auto;
+ font-family:
+ Georgia,
+ "Times New Roman",
+ serif;
 
-font-family:
-Georgia,
-"Times New Roman",
-serif;
-
-font-size:23px;
-
-font-weight:700;
-
-letter-spacing:.08em;
-
+ font-size:24px;
+ font-weight:700;
+ letter-spacing:.08em;
 }
 
+/* 日付 */
 
 .date{
-
-font-size:20px;
-
-margin-top:14px;
-
-letter-spacing:.12em;
-
+ font-size:21px;
+ margin-top:12px;
+ letter-spacing:.12em;
 }
 
+/* 主催 */
 
 .issuer{
-
-font-size:18px;
-
-margin-top:5px;
-
+ font-size:18px;
+ margin-top:5px;
 }
 
+/* ==============================
+   表彰バッジ
+================================ */
 
-/* メダルバッジ */
+.medal{
+ position:absolute;
 
-.badge{
+ right:50px;
+ bottom:35px;
 
-position:absolute;
+ width:155px;
+ height:auto;
 
-right:60px;
+ object-fit:contain;
 
-bottom:42px;
+ background:none;
+ border:none;
+ border-radius:0;
 
-width:145px;
-
-height:auto;
-
-z-index:3;
-
-mix-blend-mode:multiply;
-
+ z-index:3;
 }
 
-
-/* スマホ */
+/* ==============================
+   スマホ
+================================ */
 
 @media(max-width:900px){
 
-main{
+ main{
+  grid-template-columns:1fr;
+ }
 
-grid-template-columns:1fr;
+ .preview-wrap{
+  justify-content:start;
+ }
 
-}
-
-.preview-wrap{
-
-justify-content:start;
-
-}
-
-#certificate{
-
-transform-origin:top left;
-
-}
+ #certificate{
+  transform-origin:top left;
+ }
 
 }
 
 </style>
-
 </head>
 
 
@@ -508,37 +351,27 @@ transform-origin:top left;
 
 
 <header>
-
 ⚾ 虹学夏季野球大会　表彰状メーカー
-
 </header>
 
 
 <main>
 
 
+<!-- ============================
+     設定
+============================= -->
+
 <section class="panel">
 
-
-<h2>
-
-表彰状設定
-
-</h2>
+<h2>表彰状設定</h2>
 
 
-<label>
-
-表彰項目
-
-</label>
-
+<label>表彰項目</label>
 
 <select id="awardType">
 
-<option value="winner">
-優勝
-</option>
+<option value="winner">優勝</option>
 
 <option value="teamMvp">
 チームMVP
@@ -556,76 +389,74 @@ transform-origin:top left;
 
 
 <label id="recipientLabel">
-
 チーム名
-
 </label>
 
 
 <input
-id="recipientInput"
-value="RED EAGLES"
-placeholder="チーム名または選手名"
+ id="recipientInput"
+ value="RED EAGLES"
+ placeholder="チーム名または選手名"
 >
 
 
 <label>
-
 年月日
-
 </label>
 
 
 <input
-id="dateInput"
-type="date"
-value="2026-07-11"
+ id="dateInput"
+ type="date"
+ value="2026-07-11"
 >
 
 
 <label>
-
 大会名
-
 </label>
 
 
 <input
-id="tournamentInput"
-value="NIJIGAKU SUMMER BASEBALL TOURNAMENT 2026"
+ id="tournamentInput"
+ value="NIJIGAKU SUMMER BASEBALL TOURNAMENT 2026"
 >
 
 
 <button
-id="download"
-class="primary"
+ id="download"
+ class="primary"
 >
-
 PNG画像として保存
-
 </button>
 
 
 <button
-id="reset"
-class="secondary"
+ id="reset"
+ class="secondary"
 >
-
 サンプルに戻す
-
 </button>
 
 
 <p class="small">
 
-入力内容は右の表彰状へリアルタイムで反映されます。  
-PNG保存時は表彰状部分のみを書き出します。
+入力内容は表彰状へ
+リアルタイムで反映されます。
+
+PNG保存時は
+表彰状部分のみを書き出します。
 
 </p>
 
 
 </section>
 
+
+
+<!-- ============================
+     表彰状
+============================= -->
 
 
 <section class="panel preview-wrap">
@@ -636,31 +467,16 @@ PNG保存時は表彰状部分のみを書き出します。
 
 <div class="corner tl"></div>
 
-<div class="corner tr"></div>
-
-<div class="corner bl"></div>
-
 <div class="corner br"></div>
 
 
-<div class="inner-frame"></div>
-
-
-<div class="side-laurel left">
-
-❧<br>
-❧<br>
-❧
-
+<div class="ornament-top">
+✦　◆　✦
 </div>
 
 
-<div class="side-laurel right">
-
-❧<br>
-❧<br>
-❧
-
+<div class="ornament-bottom">
+❧　✦　❧
 </div>
 
 
@@ -669,55 +485,46 @@ PNG保存時は表彰状部分のみを書き出します。
 
 
 <div class="crown">
-
 ♛
-
 </div>
 
 
 <div class="title">
-
 表 彰 状
-
 </div>
 
 
 <div class="laurel">
-
 ❧　✦　❧
-
 </div>
 
 
 <div
-id="awardView"
-class="award"
+ id="awardView"
+ class="award"
 >
-
 優 勝
-
 </div>
 
 
 <div
-id="recipientView"
-class="recipient"
+ id="recipientView"
+ class="recipient"
 >
-
 RED EAGLES 殿
-
 </div>
 
 
 <div
-id="bodyView"
-class="bodytext"
-></div>
+ id="bodyView"
+ class="bodytext"
+>
+</div>
 
 
 <div
-id="tournamentView"
-class="tournament"
+ id="tournamentView"
+ class="tournament"
 >
 
 NIJIGAKU SUMMER BASEBALL TOURNAMENT 2026
@@ -726,8 +533,8 @@ NIJIGAKU SUMMER BASEBALL TOURNAMENT 2026
 
 
 <div
-id="dateView"
-class="date"
+ id="dateView"
+ class="date"
 >
 
 2026年7月11日
@@ -745,10 +552,13 @@ class="date"
 </div>
 
 
+
+<!-- 表彰バッジ -->
+
 <img
-class="badge"
-src="award-badge.png"
-alt=""
+ src="./badge.png"
+ class="medal"
+ alt=""
 >
 
 
@@ -765,66 +575,67 @@ alt=""
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
 
+
 <script>
 
 
-const awardType =
-document.getElementById('awardType');
+const awardType=
+document.getElementById("awardType");
 
 
-const recipientInput =
-document.getElementById('recipientInput');
+const recipientInput=
+document.getElementById("recipientInput");
 
 
-const recipientLabel =
-document.getElementById('recipientLabel');
+const recipientLabel=
+document.getElementById("recipientLabel");
 
 
-const dateInput =
-document.getElementById('dateInput');
+const dateInput=
+document.getElementById("dateInput");
 
 
-const tournamentInput =
-document.getElementById('tournamentInput');
+const tournamentInput=
+document.getElementById("tournamentInput");
 
 
-const awardView =
-document.getElementById('awardView');
+const awardView=
+document.getElementById("awardView");
 
 
-const recipientView =
-document.getElementById('recipientView');
+const recipientView=
+document.getElementById("recipientView");
 
 
-const bodyView =
-document.getElementById('bodyView');
+const bodyView=
+document.getElementById("bodyView");
 
 
-const tournamentView =
-document.getElementById('tournamentView');
+const tournamentView=
+document.getElementById("tournamentView");
 
 
-const dateView =
-document.getElementById('dateView');
+const dateView=
+document.getElementById("dateView");
 
 
-const certificate =
-document.getElementById('certificate');
+const certificate=
+document.getElementById("certificate");
 
 
 
-const presets = {
+const presets={
 
 
 winner:{
 
-title:'優 勝',
+ title:"優 勝",
 
-label:'チーム名',
+ label:"チーム名",
 
-sample:'RED EAGLES',
+ sample:"RED EAGLES",
 
-body:
+ body:
 `貴チームは本大会において
 チーム一丸となり 卓越した力と不屈の精神を発揮し
 見事 優勝という輝かしい成績を収められました
@@ -836,13 +647,13 @@ body:
 
 teamMvp:{
 
-title:'チームMVP',
+ title:"チームMVP",
 
-label:'選手名',
+ label:"選手名",
 
-sample:'虹学 太郎',
+ sample:"虹学 太郎",
 
-body:
+ body:
 `貴殿は本大会において
 優勝チームの中で最も優れた成績を収め
 チームの勝利に大きく貢献されました
@@ -854,13 +665,13 @@ body:
 
 tournamentMvp:{
 
-title:'大会MVP',
+ title:"大会MVP",
 
-label:'選手名',
+ label:"選手名",
 
-sample:'虹学 太郎',
+ sample:"虹学 太郎",
 
-body:
+ body:
 `貴殿は本大会において
 大会を通じ最も優れた成績を収め
 卓越した活躍をもって大会を彩られました
@@ -872,13 +683,13 @@ body:
 
 hrKing:{
 
-title:'本 塁 打 王',
+ title:"本 塁 打 王",
 
-label:'選手名',
+ label:"選手名",
 
-sample:'虹学 太郎',
+ sample:"虹学 太郎",
 
-body:
+ body:
 `貴殿は本大会において
 大会最多の本塁打を記録し
 類まれなる打撃力を遺憾なく発揮されました
@@ -893,16 +704,17 @@ body:
 
 function formatDate(value){
 
-if(!value){
+ if(!value){
 
-return '　　　年　　月　　日';
+  return "　　　年　　月　　日";
 
-}
+ }
 
-const d =
-new Date(value + 'T00:00:00');
+ const d=
+ new Date(value+"T00:00:00");
 
-return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
+
+ return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
 
 }
 
@@ -910,105 +722,104 @@ return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
 
 function render(){
 
-const p =
-presets[awardType.value];
+
+ const p=
+ presets[awardType.value];
 
 
-awardView.textContent =
-p.title;
+ awardView.textContent=
+ p.title;
 
 
-recipientLabel.textContent =
-p.label;
+ recipientLabel.textContent=
+ p.label;
 
 
-recipientView.textContent =
-(recipientInput.value.trim() || '名称未設定')
-+
-' 殿';
+ recipientView.textContent=
+ (recipientInput.value.trim()||"名称未設定")
+ +" 殿";
 
 
-bodyView.textContent =
-p.body;
+ bodyView.textContent=
+ p.body;
 
 
-tournamentView.textContent =
-tournamentInput.value.trim()
-||
-'大会名';
+ tournamentView.textContent=
+ tournamentInput.value.trim()
+ ||"大会名";
 
 
-dateView.textContent =
-formatDate(dateInput.value);
+ dateView.textContent=
+ formatDate(dateInput.value);
+
 
 }
 
 
 
-awardType.onchange = () => {
-
-const p =
-presets[awardType.value];
+awardType.onchange=()=>{
 
 
-recipientLabel.textContent =
-p.label;
+ const p=
+ presets[awardType.value];
 
 
-recipientInput.value =
-p.sample;
+ recipientLabel.textContent=
+ p.label;
 
 
-render();
+ recipientInput.value=
+ p.sample;
+
+
+ render();
+
 
 };
 
 
 
 [
-recipientInput,
-dateInput,
-tournamentInput
+ recipientInput,
+ dateInput,
+ tournamentInput
 ]
 
 .forEach(
 
-el =>
+ el=>
 
-el.addEventListener(
-
-'input',
-
-render
-
-)
+ el.addEventListener(
+ "input",
+ render
+ )
 
 );
 
 
 
 document
-.getElementById('reset')
-.onclick = () => {
+.getElementById("reset")
+.onclick=()=>{
 
 
-awardType.value =
-'winner';
+ awardType.value=
+ "winner";
 
 
-recipientInput.value =
-'RED EAGLES';
+ recipientInput.value=
+ "RED EAGLES";
 
 
-dateInput.value =
-'2026-07-11';
+ dateInput.value=
+ "2026-07-11";
 
 
-tournamentInput.value =
-'NIJIGAKU SUMMER BASEBALL TOURNAMENT 2026';
+ tournamentInput.value=
+ "NIJIGAKU SUMMER BASEBALL TOURNAMENT 2026";
 
 
-render();
+ render();
 
 
 };
@@ -1016,88 +827,86 @@ render();
 
 
 document
-.getElementById('download')
-.onclick = async () => {
+.getElementById("download")
+.onclick=async()=>{
 
 
-const btn =
-document.getElementById('download');
+ const btn=
+ document.getElementById("download");
 
 
-btn.disabled =
-true;
+ btn.disabled=true;
 
 
-btn.textContent =
-'画像を作成中…';
+ btn.textContent=
+ "画像を作成中…";
 
 
-try{
+ try{
 
 
-const canvas =
-await html2canvas(
+  const canvas=
+  await html2canvas(
 
-certificate,
+   certificate,
 
-{
+   {
 
-scale:2,
+    scale:2,
 
-backgroundColor:null,
+    backgroundColor:null,
 
-useCORS:true
+    useCORS:true
 
-}
+   }
 
-);
-
-
-const link =
-document.createElement('a');
+  );
 
 
-link.download =
-
-`表彰状_${presets[awardType.value].title.replaceAll(' ','')}_${recipientInput.value.trim() || '名称未設定'}.png`;
-
-
-link.href =
-canvas.toDataURL('image/png');
+  const link=
+  document.createElement("a");
 
 
-link.click();
+  link.download=
+
+  `表彰状_${presets[awardType.value].title.replaceAll(" ","")}_${recipientInput.value.trim()||"名称未設定"}.png`;
 
 
-}
+  link.href=
+  canvas.toDataURL("image/png");
 
 
-catch(e){
+  link.click();
 
 
-console.error(e);
+ }
 
 
-alert(
-'画像の保存に失敗しました'
-);
+ catch(e){
 
 
-}
+  console.error(e);
 
 
-finally{
+  alert(
+  "画像の保存に失敗しました"
+  );
 
 
-btn.disabled =
-false;
+ }
 
 
-btn.textContent =
-'PNG画像として保存';
+ finally{
 
 
-}
+  btn.disabled=false;
+
+
+  btn.textContent=
+  "PNG画像として保存";
+
+
+ }
 
 
 };
@@ -1107,58 +916,51 @@ btn.textContent =
 function fitPreview(){
 
 
-if(innerWidth <= 900){
+ if(innerWidth<=900){
 
 
-const available =
-
-Math.max(
-
-280,
-
-innerWidth - 64
-
-);
+  const available=
+  Math.max(
+  280,
+  innerWidth-64
+  );
 
 
-const scale =
-
-Math.min(
-
-1,
-
-available / 1120
-
-);
+  const scale=
+  Math.min(
+  1,
+  available/1120
+  );
 
 
-certificate.style.transform =
-
-`scale(${scale})`;
-
-
-certificate.parentElement.style.height =
-
-(792 * scale + 32)
-+
-'px';
+  certificate.style.transform=
+  `scale(${scale})`;
 
 
-}
+  certificate
+  .parentElement
+  .style.height=
+
+  (792*scale+32)+"px";
 
 
-else{
+ }
 
 
-certificate.style.transform =
-'';
+ else{
 
 
-certificate.parentElement.style.height =
-'';
+  certificate.style.transform=
+  "";
 
 
-}
+  certificate
+  .parentElement
+  .style.height=
+  "";
+
+
+ }
 
 
 }
@@ -1166,11 +968,8 @@ certificate.parentElement.style.height =
 
 
 addEventListener(
-
-'resize',
-
+"resize",
 fitPreview
-
 );
 
 
